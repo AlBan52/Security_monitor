@@ -4,3 +4,5 @@ env/
 .vscode/
 index.html
 .replit
+poetry.lock
+pyproject.toml
