@@ -38,8 +38,9 @@ def get_duration(visit):
     return duration
 
     
-def is_visit_long(visit, duration, minutes=60):
+def is_visit_long(visit, minutes=60):
 
+    duration = get_duration(visit)
     seconds_per_minutes = minutes * 60
  
     if visit.leaved_at:
