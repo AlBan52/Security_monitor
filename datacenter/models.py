@@ -43,15 +43,8 @@ def is_visit_long(visit, minutes=60):
     duration = get_duration(visit)
     seconds_per_minutes = minutes * 60
  
-    if visit.leaved_at:
-        if duration.seconds <= seconds_per_minutes:
-            is_strange = False
-        else:
-            is_strange = True
-    else:
-        if duration.seconds <= seconds_per_minutes:
-            is_strange = False
-        else:
-            is_strange = True
-            
-    return is_strange 
+    is_strange = duration.seconds >= seconds_per_minutes
+
+    return is_strange
+
+  
