@@ -34,16 +34,18 @@ def get_duration(visit):
         duration = visit.leaved_at - visit.entered_at
     else:
         duration = now() - visit.entered_at
- 
-    return duration
+
+    duration_in_seconds = duration.total_seconds()
+     
+    return duration_in_seconds
 
     
 def is_visit_long(visit, minutes=60):
 
-    duration = get_duration(visit)
+    duration_in_seconds = get_duration(visit)
     seconds_per_minutes = minutes * 60
  
-    is_strange = duration.seconds >= seconds_per_minutes
+    is_strange = duration_in_seconds >= seconds_per_minutes
 
     return is_strange
 
