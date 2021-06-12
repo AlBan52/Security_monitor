@@ -1,4 +1,5 @@
 import os
+from environs import Env
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
@@ -19,7 +20,9 @@ ROOT_URLCONF = "project.urls"
 
 ALLOWED_HOSTS = ["*"]
 
-DEBUG = os.getenv('DEBUG')
+env = Env()
+env.read_env()
+DEBUG = env.bool("DEBUG")
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
