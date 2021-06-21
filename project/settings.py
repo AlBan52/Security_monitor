@@ -1,6 +1,9 @@
 import os
 from environs import Env
 
+env = Env()
+env.read_env()
+
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 DATABASES = {
@@ -20,8 +23,6 @@ ROOT_URLCONF = "project.urls"
 
 ALLOWED_HOSTS = ["*"]
 
-env = Env()
-env.read_env()
 DEBUG = env.bool("DEBUG")
 
 
