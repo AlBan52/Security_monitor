@@ -23,11 +23,29 @@ pip install -r requirements.txt
 ## Запуск
 
 - Скачайте репозиторий проекта;
-- Запустите сайт командой 
-```bash
-python3 main.py
+- Создайте файл `.env`, содержащий переменные окружения, как в примере ниже:
 ```
-- Перейдите на сайт по адресу [http://127.0.0.1:8000](http://127.0.0.1:8000).
+DATABASES_ENGINE=django.db.backends.postgresql_psycopg2
+DATABASES_HOST=checkpoint.mysite.org
+DATABASES_PORT=3434
+DATABASES_NAME=checkpoint
+DATABASES_USER=guard
+DATABASES_PASSWORD=voron532
+SECRET_KEY=DRIVE_ME
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1,mysite.org
+``` 
+Переменная `DEBUG` по умолчанию имеет значение `False` - это значит, что отладочная информация выводиться не будет.
+- Запустите сайт командой: 
+```bash
+python3 manage.py runserver
+```
+Если вы работаете под ОС Windows, то запуск осуществляется следующей командой:
+```
+python manage.py runserver
+
+```
+- Перейдите на сайт по адресу: [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
 ## Цели проекта
 
