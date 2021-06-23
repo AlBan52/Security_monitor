@@ -11,7 +11,7 @@ class Passcard(models.Model):
     def __str__(self):
         if self.is_active:
             return self.owner_name
-        return f'{self.owner_name} (inactive)'
+        return f"{self.owner_name} (inactive)"
 
 
 class Visit(models.Model):
